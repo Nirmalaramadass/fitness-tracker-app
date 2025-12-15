@@ -8,7 +8,7 @@ app.secret_key = "your_secret_key_here"
 # Google API Credentials
 CLIENT_ID = "620527182020-m20qmmc2b7mohm12redh7egdn5bb5pq5.apps.googleusercontent.com"
 CLIENT_SECRET = "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"
-REDIRECT_URI = "http://localhost:5000/callback"
+REDIRECT_URI = "https://fitness-tracker-app-j9hm.onrender.com/callback"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 FITNESS_URL = "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate"
 
