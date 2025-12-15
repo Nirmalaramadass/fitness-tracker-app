@@ -16,7 +16,7 @@ app.secret_key = "your_secret_key_here"
 # Google API Credentials from environment variables
 CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-REDIRECT_URI = "http://localhost:5000/callback"
+REDIRECT_URI = "https://fitness-tracker-app-j9hm.onrender.com/callback"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 FITNESS_URL = "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate"
 
