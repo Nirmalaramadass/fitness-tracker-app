@@ -1,0 +1,107 @@
+#:import MDCard kivymd.uix.card.MDCard
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
+#:import MDBottomNavigation kivymd.uix.bottomnavigation.MDBottomNavigation
+#:import MDBottomNavigationItem kivymd.uix.bottomnavigation.MDBottomNavigationItem
+#:import MDList kivymd.uix.list.MDList
+#:import ScrollView kivy.uix.scrollview.ScrollView
+#:import Graph kivy_garden.graph.Graph
+
+<MainScreen>:
+    MDBottomNavigation:
+        id: bottom_nav
+        panel_color: app.theme_cls.primary_light
+
+        MDBottomNavigationItem:
+            name: 'home'
+            text: 'Home'
+            icon: 'home'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(12)
+                spacing: dp(12)
+
+                MDCard:
+                    size_hint_y: None
+                    height: dp(120)
+                    padding: dp(12)
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDLabel:
+                            text: 'Steps'
+                            theme_text_color: 'Secondary'
+                        MDLabel:
+                            id: steps_label
+                            text: '0'
+                            font_style: 'H4'
+
+                MDCard:
+                    size_hint_y: None
+                    height: dp(120)
+                    padding: dp(12)
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDLabel:
+                            text: 'Calories'
+                            theme_text_color: 'Secondary'
+                        MDLabel:
+                            id: calories_label
+                            text: '0.0'
+                            font_style: 'H5'
+
+        MDBottomNavigationItem:
+            name: 'charts'
+            text: 'Charts'
+            icon: 'chart-line'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(8)
+                Graph:
+                    id: graph
+                    xlabel: 'Time'
+                    ylabel: 'Steps'
+                    x_ticks_minor: 1
+                    x_ticks_major: 5
+                    y_ticks_major: 500
+                    y_grid_label: True
+                    x_grid_label: True
+                    padding: 5
+                    x_grid: True
+                    y_grid: True
+                    xmin: 0
+                    xmax: 30
+                    ymin: 0
+                    ymax: 10000
+
+        MDBottomNavigationItem:
+            name: 'workout'
+            text: 'Workout'
+            icon: 'run'
+
+            ScrollView:
+                MDList:
+                    id: workout_list
+                    OneLineListItem:
+                        text: 'Quick Walk - 20 min'
+                    OneLineListItem:
+                        text: 'HIIT - 15 min'
+                    OneLineListItem:
+                        text: 'Yoga - 30 min'
+
+        MDBottomNavigationItem:
+            name: 'profile'
+            text: 'Profile'
+            icon: 'account'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(12)
+                spacing: dp(8)
+                MDLabel:
+                    text: 'User Profile'
+                    font_style: 'H5'
+                MDLabel:
+                    id: profile_info
+                    text: 'Name: —\nAge: —\nGoal: Lose weight'

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: fitness-tracker-app
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --log-file -
+    healthCheckPath: /
+    envVars:
+      - key: GOOGLE_CLIENT_ID
+        value: "620527182020-m20qmmc2b7mohm12redh7egdn5bb5pq5.apps.googleusercontent.com"
+      - key: GOOGLE_CLIENT_SECRET
+        value: "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"
+      - key: FLASK_SECRET_KEY
+        value: "your_secret_key_here"
+
+# Note: Fill in env var values in the Render dashboard (do NOT commit secrets).

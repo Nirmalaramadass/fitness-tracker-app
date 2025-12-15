@@ -1,0 +1,7 @@
+kivy==2.1.0
+kivymd==1.1.1
+kivy_garden.graph
+
+# If you intend to build an Android APK with buildozer, add additional
+# p4a recipes as needed (example: matplotlib, numpy). Keep this file
+# in sync with buildozer.spec requirements.
